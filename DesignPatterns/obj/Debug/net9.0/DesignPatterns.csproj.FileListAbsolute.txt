@@ -12,3 +12,4 @@ C:\Users\fff\RiderProjects\DesignPatterns\DesignPatterns\obj\Debug\net9.0\refint
 C:\Users\fff\RiderProjects\DesignPatterns\DesignPatterns\obj\Debug\net9.0\DesignPatterns.pdb
 C:\Users\fff\RiderProjects\DesignPatterns\DesignPatterns\obj\Debug\net9.0\DesignPatterns.genruntimeconfig.cache
 C:\Users\fff\RiderProjects\DesignPatterns\DesignPatterns\obj\Debug\net9.0\ref\DesignPatterns.dll
+C:\Users\fff\RiderProjects\DesignPatterns\DesignPatterns\obj\Debug\net9.0\DesignPatterns.sourcelink.json
