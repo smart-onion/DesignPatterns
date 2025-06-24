@@ -3,6 +3,8 @@ using DesignPatterns.AbstractFactoryPattern;
 using DesignPatterns.BuilderPattern;
 using DesignPatterns.PrototypePattern;
 using DesignPatterns.AdapterPattern;
+using DesignPatterns.ChainOfResponsibilityPattern;
+
 namespace DesignPatterns;
 
 class Program
@@ -36,6 +38,16 @@ class Program
         IShape rectangle = new Rectangle(10, 20);
         ShapeAdapter shapeAdapter = new ShapeAdapter(rectangle);
         PaintShape(shapeAdapter);
+        
+        // Chain of Responsibility pattern
+        var root = new HomeRoute();
+        root.SetNext(new AboutRoute())
+            .SetNext(new PageNotFoundRoute());
+        HttpRequest request = new HttpRequest();
+        request.Path = "/abouts";
+        
+        var response = root.Handle(request);
+        Console.WriteLine(response.Response);
     }
 
     static void AssemblePc(ICpu cpu, IRam ram) // helper function for abstract factory pattern
