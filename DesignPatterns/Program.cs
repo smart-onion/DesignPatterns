@@ -1,10 +1,8 @@
-﻿using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using DesignPatterns.FactoryPattern;
+﻿using DesignPatterns.FactoryPattern;
 using DesignPatterns.AbstractFactoryPattern;
 using DesignPatterns.BuilderPattern;
 using DesignPatterns.PrototypePattern;
-
+using DesignPatterns.AdapterPattern;
 namespace DesignPatterns;
 
 class Program
@@ -33,11 +31,23 @@ class Program
         //Prototype pattern
         ProductProto productProto = new ProductProto(1, "product");
         ProductProto productClone = (ProductProto) productProto.Clone();
+        
+        // Adapter pattern
+        IShape rectangle = new Rectangle(10, 20);
+        ShapeAdapter shapeAdapter = new ShapeAdapter(rectangle);
+        PaintShape(shapeAdapter);
     }
 
     static void AssemblePc(ICpu cpu, IRam ram) // helper function for abstract factory pattern
     {
         cpu.Run();
         ram.GetRam();
+    }
+
+    
+    
+    static void PaintShape(IColor color) // helper function for adapter pattern
+    {
+        Console.WriteLine(color.GetColor());
     }
 }
