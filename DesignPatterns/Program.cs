@@ -4,6 +4,7 @@ using DesignPatterns.BuilderPattern;
 using DesignPatterns.PrototypePattern;
 using DesignPatterns.AdapterPattern;
 using DesignPatterns.ChainOfResponsibilityPattern;
+using DesignPatterns.CommandPattern;
 
 namespace DesignPatterns;
 
@@ -48,6 +49,10 @@ class Program
         
         var response = root.Handle(request);
         Console.WriteLine(response.Response);
+        
+        // Command Pattern
+        var app = new Application(new FileLogger());
+        app.Log("Hello World!");
     }
 
     static void AssemblePc(ICpu cpu, IRam ram) // helper function for abstract factory pattern
